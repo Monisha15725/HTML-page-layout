@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Forge | Interactive Layout Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Controls -->
+        <aside class="sidebar glass-panel">
+            <div class="brand">
+                <h1>Grid Forge</h1>
+                <p>CSS Grid Layout Generator</p>
+            </div>
+
+            <div class="controls-group">
+                <label for="rows">Rows: <span id="rows-val">3</span></label>
+                <input type="range" id="rows" min="1" max="12" value="3">
+            </div>
+
+            <div class="controls-group">
+                <label for="columns">Columns: <span id="columns-val">3</span></label>
+                <input type="range" id="columns" min="1" max="12" value="3">
+            </div>
+
+            <div class="controls-group">
+                <label for="gap">Gap (px): <span id="gap-val">20</span></label>
+                <input type="range" id="gap" min="0" max="50" value="20">
+            </div>
+
+            <div class="actions">
+                <button id="get-code-btn" class="btn-primary">Get Code</button>
+            </div>
+        </aside>
+
+        <!-- Main Preview Area -->
+        <main class="preview-area">
+            <div id="grid-preview" class="grid-preview">
+                <!-- Grid Items will be generated here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Code Modal -->
+    <div id="code-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2>Generated Code</h2>
+                <button id="close-modal" class="btn-icon">&times;</button>
+            </div>
+            <div class="code-block">
+                <h3>CSS</h3>
+                <pre><code id="css-output"></code></pre>
+            </div>
+            <div class="code-block">
+                <h3>HTML</h3>
+                <pre><code id="html-output"></code></pre>
+            </div>
+            <button id="copy-btn" class="btn-secondary">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
